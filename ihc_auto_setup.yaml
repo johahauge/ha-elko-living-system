@@ -79,7 +79,7 @@ binary_sensor:
   # Tastatur for adgangskontroll
   - xpath: './/product_dataline[@product_identifier="_0x2111"]'
     node: "dataline_input"
-  # For the buttons you can either configure as binary sensors or switches.
+  # For the buttons you can either configure as binary sensors, switches or both.
   # Just move the text to the switch section to make it a switch.
   # Trykk 1 knapp
   - xpath: './/product_dataline[@product_identifier="_0x2119"]'
