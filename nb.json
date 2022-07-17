@@ -1,0 +1,33 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Kan ikke koble til ELKO LS-kontrolleren",
+            "invalid_auth": "Godkjenning feilet. Brukernavn/passord er feil",
+            "unknown": "Ukjent feil",
+            "already_setup": "Denne kontrolleren er allerede lagt til i Home Assistant"
+        },
+        "step": {
+            "user": {
+                "description": "Legg til din ELKO LS-kontroller til Home Assistant",
+                "data": {
+                    "url": "Url",
+                    "username": "Brukernavn",
+                    "password": "Passord",
+                    "auto_setup": "Auto-oppsett",
+                    "use_groups": "Bruk ELKO LS-grupper som områdeforslag"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "description": "ELKO LS-kontroller innstillinger",
+                "data": {
+                    "info": "Info (Legger til kontrollerens navn, beskrivelse og posisjon som attributter)"
+                }
+            }
+        }
+    },
+    "title": "ELKO Living System"
+}
