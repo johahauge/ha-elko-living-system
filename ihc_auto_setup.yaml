@@ -1,0 +1,248 @@
+# ELKO Living System auto setup configuration.
+# To customize this, copy this file to the Home Assistant configuration
+# folder and make your changes.
+
+binary_sensor:
+  # ELKO Smoke detector
+  - xpath: './/product_dataline[@product_identifier="_0x210a"]'
+    node: "dataline_input"
+    type: "smoke"
+    inverting: true
+  # ELKO Gas detector NC
+  - xpath: './/product_dataline[@product_identifier="_0x210b"]'
+    node: "dataline_input[1]"
+    type: "gas"
+    inverting: true
+  # ELKO Gas detector NO
+  - xpath: './/product_dataline[@product_identifier="_0x210b"]'
+    node: "dataline_input[2]"
+    type: "gas"
+    inverting: false
+  # ELKO Leak detector
+  - xpath: './/product_dataline[@product_identifier="_0x210c"]'
+    node: "dataline_input"
+    type: "moisture"
+  # ELKO PIR med skumringsdetektor
+  - xpath: './/product_dataline[@product_identifier="_0x210e"]'
+    node: "dataline_input[1]"
+    type: "motion"
+    inverting: true
+  # ELKO PIR med skumringsdetektor
+  - xpath: './/product_dataline[@product_identifier="_0x210e"]'
+    node: "dataline_input[2]"
+    type: "light"
+    inverting: false
+  # ELKO PIR alarm
+  - xpath: './/product_dataline[@product_identifier="_0x210f"]'
+    node: "dataline_input"
+    type: "motion"
+    inverting: true
+  # ELKO Magnet contact
+  - xpath: './/product_dataline[@product_identifier="_0x2109"]'
+    node: "dataline_input"
+    type: "opening"
+    inverting: true
+  # ELKO Light detector
+  - xpath: './/product_dataline[@product_identifier="_0x2110"]'
+    node: "dataline_input"
+    type: "light"
+    inverting: true
+  # ELKO Sabotasjoealarm (NC)
+  - xpath: './/product_dataline[@product_identifier="_0x2112"]'
+    node: "dataline_input"
+    type: "problem"
+    inverting: true
+  # ELKO Skumringsdetektor med solsensor
+  - xpath: './/product_dataline[@product_identifier="_0x2114"]'
+    node: "dataline_input"
+    type: "light"
+    inverting: true
+  # ELKO Bakcupmodul batteri 12V og 24V
+  - xpath: './/product_dataline[@product_identifier="_0x2115"]'
+    node: "dataline_input"
+    type: "battery"
+    inverting: true
+  # ELKO PIR
+  #- xpath: './/product_dataline[@product_identifier="_0x2120"]'
+  #  node: "dataline_input"
+  #  type: "motion"
+  #  inverting: true
+  # ELKO IR fjernkontroll 8
+  - xpath: './/product_dataline[@product_identifier="_0x211f"]'
+    node: "dataline_input"
+  # ELKO IR fjernkontroll 8
+  - xpath: './/product_dataline[@product_identifier="_0x211f"]'
+    node: "dataline_input"
+  # ELKO IR fjernkontroll 16
+  - xpath: './/product_dataline[@product_identifier="_0x210d"]'
+    node: "dataline_input"
+  # ELKO Tastatur for adgangskontroll
+  - xpath: './/product_dataline[@product_identifier="_0x2111"]'
+    node: "dataline_input"
+  # ELKO For the buttons you can either configure as binary sensors or switches.
+  # ELKO Just move the text to the switch section to make it a switch.
+  # ELKO Trykk 1 knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2119"]'
+    node: "dataline_input"
+  # ELKO Trykk 1 knapp 1 LED
+  - xpath: './/product_dataline[@product_identifier="_0x211a"]'
+    node: "dataline_input"
+  # ELKO Trykk 2 knapp 2 LED
+  - xpath: './/product_dataline[@product_identifier="_0x211b"]'
+    node: "dataline_input"
+  # ELKO Trykk 2 knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2101"]'
+    node: "dataline_input"
+  # ELKO Trykk 3 knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2125"]'
+    node: "dataline_input"
+  # ELKO Trykk 3 knapp 3 LED
+  - xpath: './/product_dataline[@product_identifier="_0x2126"]'
+    node: "dataline_input"
+  # ELKO Trykk 4 knapp 4 LED
+  - xpath: './/product_dataline[@product_identifier="_0x2106"]'
+    node: "dataline_input"
+  # ELKO Trykk 5 knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2127"]'
+    node: "dataline_input"
+  # ELKO Trykk 6 knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2103"]'
+    node: "dataline_input"
+  # ELKO WL Trykk 4 knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4102"]'
+    node: "airlink_input"
+  # ELKO WL Fjernkontroll
+  - xpath: './/product_airlink[@product_identifier="_0x4104"]'
+    node: "airlink_input"
+  # ELKO WL Nøkkelring
+  - xpath: './/product_airlink[@product_identifier="_0x4105"]'
+    node: "airlink_input"
+  # ELKO WL Puck input
+  - xpath: './/product_airlink[@product_identifier="_0x4106"]'
+    node: "airlink_input"
+  # ELKO Generic input product
+  - xpath: './/product_dataline[@product_identifier="_0x2701"]'
+    node: "dataline_output"
+
+light:
+  # ELKO WL Mobil dimmer 1-knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4301"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO WL Lampedimmer 1-knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4302"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO WL Mobil dimmer 2-knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4303"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO WL Lampedimmer 2-knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4304"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO WL Universel dimmer 1-knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4305"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO WL Universel dimmer 2-knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4306"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO WL 3-tråds Dimmer Puck 1-Knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4307"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO WL 3-tråds Dimmer Puck 2-Knapp
+  - xpath: './/product_airlink[@product_identifier="_0x4308"]'
+    node: "airlink_dimming"
+    dimmable: true
+  # ELKO Unidimmer 1-knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2301"]'
+    node: "dataline_output"
+    dimmable: true
+  # ELKO Unidimmer 2-knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2302"]'
+    node: "dataline_output"
+    dimmable: true
+  # ELKO Dimmer 1-knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2303"]'
+    node: "dataline_output"
+    dimmable: true
+  # ELKO Dimmer 2-knapp
+  - xpath: './/product_dataline[@product_identifier="_0x2304"]'
+    node: "dataline_output"
+    dimmable: true
+  # ELKO Lampeuttak
+  - xpath: './/product_dataline[@product_identifier="_0x2202"]'
+    node: "dataline_output"
+    dimmable: false
+  # ELKO WL Lampeuttak
+  - xpath: './/product_airlink[@product_identifier="_0x2202"]'
+    node: "dataline_output"
+    dimmable: false
+
+sensor:
+  # ELKO Temperature sensor
+  - xpath: './/product_dataline[@product_identifier="_0x2124"]'
+    node: "resource_temperature"
+    unit_of_measurement: "°C"
+  # ELKO Humidity/temperature
+  - xpath: './/product_dataline[@product_identifier="_0x2135"]'
+    node: "resource_humidity_level"
+    unit_of_measurement: "%"
+  # ELKO Lux/temperature
+  - xpath: './/product_dataline[@product_identifier="_0x2136"]'
+    node: "resource_light"
+    unit_of_measurement: "Lux"
+  # ELKO Temperature sensor ELKO
+  - xpath: './/product_dataline[@product_identifier="_0x2122"]'
+    node: "resource_temperature"
+    unit_of_measurement: "°C"
+
+switch:
+  # ELKO Kontaktrelé
+  - xpath: './/product_dataline[@product_identifier="_0x2201"]'
+    node: "dataline_output"
+  # ELKO Intern sirene 80dB og 102 dB
+  - xpath: './/product_dataline[@product_identifier="_0x2203"]'
+    node: "dataline_output"
+  # ELKO Ekstern sirene
+  - xpath: './/product_dataline[@product_identifier="_0x2204"]'
+    node: "dataline_output"
+  # ELKO Solenoidventil NC. Ventilen er lukket så lenge 230V blir tilført.
+  - xpath: './/product_dataline[@product_identifier="_0x2205"]'
+    node: "dataline_output"
+  # ELKO Solenoidventil NO. Ventilen er åpen så lenge 230V blir tilført.
+  - xpath: './/product_dataline[@product_identifier="_0x2206"]'
+    node: "dataline_output"
+  # ELKO Outputmodul 1-10V
+  - xpath: './/product_dataline[@product_identifier="_0x2207"]'
+    node: "dataline_output"
+  # ELKO Doorlock
+  - xpath: './/product_dataline[@product_identifier="_0x2208"]'
+    node: "dataline_output"
+  # ELKO Doorbell
+  - xpath: './/product_dataline[@product_identifier="_0x2209"]'
+    node: "dataline_output"
+  # ELKO Varmeanlegg gulvvarme
+  - xpath: './/product_dataline[@product_identifier="_0x2210"]'
+    node: "dataline_output"
+  # ELKO Generic output product
+  - xpath: './/product_dataline[@product_identifier="_0x2702"]'
+    node: "dataline_output"
+  # ELKO Wireless Plug outlet
+  - xpath: './/product_airlink[@product_identifier="_0x4201"]'
+    node: "airlink_relay"
+  # ELKO WL Universelt relé
+  - xpath: './/product_airlink[@product_identifier="_0x4203"]'
+    node: "airlink_relay"
+  # ELKO WL Mobil relé
+  - xpath: './/product_airlink[@product_identifier="_0x4204"]'
+    node: "airlink_relay"
+  # ELKO WL Puck relé
+  - xpath: './/product_airlink[@product_identifier="_0x4205"]'
+    node: "airlink_relay"
+  # ELKO WL Persienne/shutter (2 knapp, lokal lås)
+  - xpath: './/product_airlink[@product_identifier="_0x45015"]'
+    node: "airlink_shutter"
